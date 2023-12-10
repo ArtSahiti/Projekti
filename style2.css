@@ -1,0 +1,107 @@
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-image: url('fotologin.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit;
+    background-position: inherit;
+    background-repeat: inherit;
+    background-size: inherit;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    z-index: -1;
+}
+
+
+.container {
+    filter: none;
+    margin-top: 2cm;
+    width: 550px;
+    height: 600px;
+    border: 4px solid black;
+    background-color: white;
+    box-shadow: 0.5rem 0.5rem rgb(180, 22, 22), -0.5rem -0.5rem;
+    border-radius: 10px;
+    
+}
+
+
+
+.container h1{
+    margin-left: 6cm;
+}
+.container h6{
+    margin-left: 5.7cm;
+    margin-top: -0.5cm;
+    color: red;
+}
+
+
+/*.container input {
+    border-radius: 10px;
+    margin-left: 2.3cm;
+}*/
+#username{
+    width: 5cm;
+    margin-top: 1.8cm;
+    border-radius: 10px;
+    margin-left: 5cm;
+    height: 0.8cm;
+}
+#password{
+    width: 5cm;
+    border-radius: 10px;
+    margin-left: 5cm;
+    height: 0.8cm;
+    
+}
+/*.buttonat {
+    border-radius: 10px;
+    margin-left: 3.6cm;
+}*/
+#submit{
+    border-radius: 8px;
+    margin-left: 6.9cm;
+    background-color: black;
+    color: white;
+}
+/*.Register{
+    margin-top: 4cm;
+    margin-left: 5cm;
+    
+}*/
+#href{
+    margin-top: 5.2cm;
+    margin-left: 12cm;
+    border-radius: 5px;
+    color: red;
+    background-color: black;
+}
+#href:hover{
+    transform: scale(1.1);
+   background-color: red;
+   color: black;
+   transition: 0.7s;
+}
+
+#submit:hover{
+color: red;
+transform: scale(1.1);
+transition: 0.3s;
+}
+
