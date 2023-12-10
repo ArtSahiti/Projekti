@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Log In</h1><br><br>
+        <form>
+
+            <label style="color: red; font-size: 20px; opacity: 0;" id="labelUsername">Username</label><br><br>
+            <input type="text" id="username" placeholder="Email"><br>
+
+            <label style="color: red; font-size: 20px; opacity: 0;" id="labelPassword">Password</label><br><br>
+            <input type="password" id="password" placeholder="Password"><br><br>
+
+            <input type="button" value="Enter" id="submit" onclick="validateLogin()"><br>
+
+            <div class="Register">
+                <a href="register.html"><input type="button" value="Register" id="href"></a>
+            </div>
+            <h6>Nuk keni Account? Klikoni ketu per tu regjistruar</h6>
+        </form>
+    </div>
+
+    <script>
+        function validateLogin() {
+            let usernameInput = document.getElementById('username');
+            let passwordInput = document.getElementById('password');
+            let labelUsername = document.getElementById('labelUsername');
+            let labelPassword = document.getElementById('labelPassword');
+
+            labelUsername.style.opacity = '0';
+            labelPassword.style.opacity = '0';
+
+            if (usernameInput.value.trim() === "") {
+                labelUsername.innerText = 'Username is required';
+                labelUsername.style.opacity = '1';
+                return;
+            }
+
+            if (passwordInput.value.trim() === "") {
+                labelPassword.innerText = 'Password is required';
+                labelPassword.style.opacity = '1';
+                return;
+            }
+
+            
+            changeart();
+        }
+    </script>
+    <script src="scrips.js"></script>
+</body>
+
+</html>
