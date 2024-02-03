@@ -1,0 +1,165 @@
+<?php
+session_start();
+
+
+if(!isset($_SESSION["username"]))
+{
+	header("location:login.php");
+}
+
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    
+    <title>Document</title>
+</head>
+<body>
+
+
+        <!--Header dhe nav-->
+         <!--Header dhe nav-->
+          <!--Header dhe nav-->
+    <header>
+        <h1><img src="./photo/LUP2_Asset-7.png" alt=""></h1>
+      </header>
+    
+      <nav>
+        <ul>
+          <li><a href="userhome.php" >Home</a></li>
+      <li><a href="./aboutus.php" >About Us</a></li>
+      <li><a href="./review.php">Reviews</a></li>
+      <li><a href="login.php" >Log in</a></li>
+      <li><a href="logout.php">Logout</a></li>
+        </ul>
+      </nav>
+       <!--Header dhe nav-->
+        <!--Header dhe nav-->
+         <!--Header dhe nav-->
+
+        <section class="aboutustext" >
+            
+                <h1>This is our Story!</h1>
+                <p>Embarking on our online business journey was a thrilling leap into the digital marketplace.
+                     In the early days, establishing an e-commerce presence demanded meticulous planning and resourcefulness. 
+                     Navigating through the complexities of setting up an online shop,
+                      from selecting the right platform to crafting an enticing product catalog, 
+                      presented numerous challenges. We encountered hurdles in digital marketing, 
+                      logistics, and customer engagement, each hurdle a learning opportunity. Despite the initial struggles,
+                       our unwavering commitment to quality and customer satisfaction propelled us forward. Adapting to ever-evolving 
+                       trends and customer preferences, we honed our strategies and expanded our product range. Today, we stand resilient, 
+                       having overcome the tribulations that tested our entrepreneurial spirit. Our online shop has evolved into a thriving
+                        venture, a testament to perseverance, innovation, and the unwavering support of our customers. As we continue this 
+                        journey, we remain dedicated to delivering excellence and embracing the dynamic landscape of e-commerce.</p>
+
+                       
+
+                <img src="./photo/home-vector.png" width="500x500" alt="">
+                <img src="./photo/benefits-vector-2.png" width="500x500" alt="">
+                
+                <p>
+                    
+In the exhilarating culmination of our online shop's latest chapter, 
+last month's sales surged to unprecedented heights, marking a resounding success.
+ As digital storefronts transformed into bustling marketplaces, our e-commerce venture rode the wave of consumer enthusiasm.
+ The strategic fusion of curated products, seamless user experience, and targeted marketing strategies yielded remarkable results.
+  Customers flocked to our virtual aisles, captivated by a diverse array of offerings meticulously tailored to their preferences. 
+  The surge in transactions mirrored not just financial growth but a deepening connection with our clientele. Behind the scenes, a 
+  dedicated team navigated challenges, ensuring timely deliveries and responsive customer support. The impressive sales figures 
+  underscore our commitment to quality, innovation, and customer satisfaction. With gratitude for our patrons and excitement for 
+  the journey ahead, we celebrate this milestone, fueled by the belief that our online shop is not just a marketplace but a vibrant 
+  community shaping the future of digital commerce.
+                    </p>
+                   
+
+                    <img src="./photo/graf3.png" width="500x500" alt="">
+                    <img src="./photo/grafi2.png" width="500x500" alt="">
+
+        </section>
+
+
+
+
+
+    
+
+
+
+
+      <!--Foooteri ne vazhdim-->
+      <!--Foooteri ne vazhdim-->
+      <!--Foooteri ne vazhdim-->
+
+      <footer>
+        <div class="footer0">
+          <h1>LEVELUP</h1>
+        </div>
+        <div class="footer1 ">
+          Connect with us at<div class="social-media">
+            <a href="https://www.facebook.com/" target="_blank">
+              <img src="./photo/fb_icon_325x325.png" alt="">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+            <a href="https://www.linkedin.com/" target="_blank">
+              <img src="./photo/linkedin.png" alt="">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+            <a href="https://www.youtube.com/" target="_blank">
+              <img src="./photo/youtube.png" alt="">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+              <img src="./photo/Instagram_logo_2022.svg" alt="">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+            <a href="https://www.twitter.com/" target="_blank">
+              <img src="./photo/Twitter_logo_blue.png" alt="">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </div>
+        </div>
+        <div class="footer2">
+          <div class="product">
+            <div class="heading">Products</div>
+            <div class="div">Sell your Products</div>
+            <div class="div">Advertise</div>
+            <div class="div">Pricing</div>
+            <div class="div">Product Buisness</div>
+    
+          </div>
+          <div class="services">
+            <div class="heading">Services</div>
+            <div class="div">Return</div>
+            <div class="div">Cash Back</div>
+            <div class="div">Affiliate Marketing</div>
+            <div class="div">Others</div>
+          </div>
+          <div class="Company">
+            <div class="heading">Company</div>
+            <div class="div">Complaint</div>
+            <div class="div">Careers</div>
+            <div class="div">Affiliate Marketing</div>
+            <div class="div">Support</div>
+          </div>
+          <div class="Get Help">
+            <div class="heading">Get Help</div>
+            <div class="div">Help Center</div>
+            <div class="div">Privacy Policy</div>
+            <div class="div">Terms</div>
+            <div class="div">Login</div>
+          </div>
+        </div>
+        <div class="footer3">Copyright © <h4>LEVELUP</h4> 2021-2028</div>
+      </footer>
+    
+
+
+
+    
+</body>
+</html>
