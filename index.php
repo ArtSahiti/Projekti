@@ -1,13 +1,5 @@
 <?php
 session_start();
-
-
-if(!isset($_SESSION["username"]))
-{
-	header("location:login.php");
-}
-
-
 $servername="localhost";
         $username="root";
         $password="";
@@ -50,10 +42,10 @@ $servername="localhost";
 
   <nav>
     <ul>
-      <li><a href="./userhome.php" target="_blank" >Home</a></li>
-      <li><a href="./aboutus.php" >About Us</a></li>
-      <li><a href="review.php">Reviews</a></li>
-      <li><a href="./logout.php">Logout</a></li>
+      <li><a href="./index.php" target="_blank" >Home</a></li>
+      <li><a href="./aboutus.html" >About Us</a></li>
+      <li><a href="review.html">Reviews</a></li>
+      <li><a href="./login.php" target="blank">Log in</a></li>
       <li><a href="./cart.php">Cart</a></li>
       </a></li>
     </ul>
@@ -71,7 +63,7 @@ $servername="localhost";
            while($row = mysqli_fetch_array($result)){
             ?>
             <div class="product">
-              <form action="userhome.php?action=add&id=<?php echo $row["id"]?>" method="post">
+              <form action="index.php?action=add&id=<?php echo $row["id"]?>" method="post">
               <div class="product">
                 <img src="photo/<?php echo $row["image"];?>" alt="">
                 <h3><?php echo $row["description"]?></h3>

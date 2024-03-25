@@ -1,60 +1,80 @@
 <?php
+ $servername="localhost";
+ $username="root";
+ $password="";
+ $db="user";
 
-$servername="localhost";
-        $username="root";
-        $password="";
-        $db="user";
+ $connection = new mysqli($servername,$username,$password,$db);
 
-        $connection = new mysqli($servername,$username,$password,$db);
-
-
-$username = "";
-$password = "";
+$I = "";
+$username="";
 $surname = "";
-$email = "";
+ $email="";
+$password="";
 $errorMessage = "";
-$successMessage = "";
+$successMessage ="";
 
-if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
+if ( $_SERVER['REQUEST_METHOD'] == 'GET') {
+    if(!isset($_GET["I"])){
+        header("location: /Projekti/adminhome.php");
+        exit;
+    }
+    $I = $_GET["I"];
+    $sql = "SELECT * FROM login WHERE I=$I";
+    $result = $connection->query($sql);
+    $row = $result->fetch_assoc();
+
+
+    
+
+    if (!$row) {
+        header("location: /Projekti/adminhome.php");
+        exit;
+    }
+
+        $username = $row["username"];
+        $surname = $row["surname"]; 
+        $email = $row["email"];
+        $password = $row["password"];
+       
+    
+    
+}
+else {
+    $I = $_POST["I"];
     $username = $_POST["username"]; 
     $password = $_POST["password"];
     $surname = $_POST["surname"];
     $email = $_POST["email"];
+ 
 
-do{
-if( empty($username) || empty($password) || empty($surname) || empty($email)){
+do {
+    if(empty($I) || empty($username) || empty($password) || empty($surname) || empty($email)){
     $errorMessage = "All the fields are required";
     break;
 }
 
-$sql = "INSERT INTO login (username, password, surname, email)" .
-"VALUES ('$username', '$password', '$surname', '$email')";
-$result = $connection->query($sql);
+
+$sql = "UPDATE login SET username = '$username', surname = '$surname', email = '$email', password = '$password' WHERE I = $I";
 
 
 
+    $result = $connection->query($sql);
+    if(!$result) {
+        $errorMessage = "Invalid query:" . $connection->error;
+        break;
+    }
+    $successMessage = "Client updated correctly";
 
-if(!$result) {
-    $errorMessage = "Invalid query:" . $connection->error;
-    break;
-}
-
-
-
-$username = "";
-$password = "";
-$surname = "";
-$email = "";
-$successMessage = "Client added correctly";
+    header("location: /Projekti/adminhome.php");
+    exit;
 
 
-
-}while (false);
-
+}while(true);
 
 }
-
 ?>
+
 
 
 <!DOCTYPE html>
@@ -93,6 +113,7 @@ if(!empty($errorMessage)){
 ?>
 
 <form method="post">
+    <input type="hidden" name="I" value="<?php echo $I; ?>" >
     <div class="row mb-3">
 <label class="col-sm-3 col-form-label">Name</label>
 <div class="col-sm-6">
@@ -100,7 +121,7 @@ if(!empty($errorMessage)){
 </div>
 </div>
 
-<form method="post">
+
     <div class="row mb-3">
 <label class="col-sm-3 col-form-label">Surname</label>
 <div class="col-sm-6">
@@ -108,7 +129,8 @@ if(!empty($errorMessage)){
 </div>
 </div>
 
-<form method="post">
+
+    
     <div class="row mb-3">
 <label class="col-sm-3 col-form-label">Email</label>
 <div class="col-sm-6">
@@ -123,7 +145,6 @@ if(!empty($errorMessage)){
 </div>
 </div>
 
- 
 
         <?php  
         if ( !empty($successMessage)){

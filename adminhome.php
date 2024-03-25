@@ -4,7 +4,7 @@ session_start();
 
 if(!isset($_SESSION["username"]))
 {
-	header("location:login.php");
+  header("location:login.php");
 }
 
 ?>
@@ -29,28 +29,25 @@ if(!isset($_SESSION["username"]))
       <li><a href="./adminhome.php" target="_blank" >Home</a></li>
       <li><a href="./aboutus.php" >About Us</a></li>
       <li><a href="./review.php">Reviews</a></li>
-      <li><a href="./login.php" target="blank">Log in</a></li>
       <li><a href="./logout.php">Logout</a></li>
       
 
     </ul>
   </nav>
 
-<center><h1>THIS IS ADMIN HOME PAGE</h1><?php echo $_SESSION["username"] ?></center>
+
 
 <div class="container my-5">
 <h2>Clients</h2>
-<a class="btn btn-primary" href="\Projektifin\create.php" role="button">New Client</a>
-<br>
+<a class="btn btn-success" href="\Projekti\create.php" role="button">New Client</a>
 <table class="table">
 <thead>
     <tr>
         <th>ID</th>
         <th>Emri</th>
+        <th>Surname</th>
         <th>Gmail</th>
-        <th>Number</th>
-        <th>State</th>
-        <th>Date</th>
+        <th>Usertype</th>
     </tr>
 </thead>
 
@@ -60,33 +57,32 @@ if(!isset($_SESSION["username"]))
         $username="root";
         $password="";
         $db="user";
-
+ 
         $connection = new mysqli($servername,$username,$password,$db);
 
         if($connection->connect_error)
         {
-	    die("connection error");
+      die("connection error");
         }
-        $sql = "SELECT * FROM clients";
+        $sql = "SELECT * FROM login";
         $result = $connection->query($sql);
 
         if(!$result)
         {
-	    die("connection error");
+      die("connection error");
         }
 
         while($row = $result->fetch_assoc()){
             echo "
             <tr>
-            <td>$row[id]</td>
-            <td>$row[name]</td>
+            <td>$row[I]</td>
+            <td>$row[username]</td>
+            <td>$row[surname]</td>
             <td>$row[email]</td>
-            <td>$row[phone]</td>
-            <td>$row[address]</td>
-            <td>$row[created_at]</td>
+            <td>$row[usertype]</td>
             <td>
-                <a  class='btn' href='/mypage/edit.php?id=$row[id]'>Edit</a>
-                <a  class='btn'  href='/mypage/delete.php?id=$row[id]'>Delete</a>
+                <a  class='btn btn-dark btn-sm' href='/Projekti/edit.php?I=$row[I]'>Edit</a>
+                <a  class='btn btn-danger btn-sm' href='/Projekti/delete.php?I=$row[I]'>Delete</a>
             </td>
         </tr>
 
@@ -122,7 +118,7 @@ if(!isset($_SESSION["username"]))
 
 
 
-<a href="logout.php">Logout</a>
+
 <footer>
     <div class="footer0">
       <h1>LEVELUP</h1>
