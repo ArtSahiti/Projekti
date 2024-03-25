@@ -228,10 +228,9 @@ body {
     
       <nav>
         <ul>
-          <li><a href="./userhome.php">Home</a></li>
+          <li><a href="userhome.php">Home</a></li>
           <li><a href="./aboutus.php" >About Us</a></li>
           <li><a href="./review.php">Reviews</a></li>
-          <li><a href="login.php" >Log in</a></li>
           <li><a href="logout.php">Logout</a></li>
             
         </ul>
